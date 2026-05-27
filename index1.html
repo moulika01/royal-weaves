@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Moulika Aura Silks</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:white;
+    overflow-x:hidden;
+}
+
+/* ================= HERO WRAPPER ================= */
+
+.hero-wrapper{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.video-background{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-2;
+}
+
+/* FULL SCREEN VIDEO FIX */
+.bg-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ================= OVERLAY ================= */
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+    z-index:-1;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 8%;
+    background:rgba(0,0,0,0.25);
+    backdrop-filter:blur(12px);
+    position:relative;
+    z-index:1000;
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+}
+
+.logo img{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+    object-fit:cover;
+}
+
+.logo h2{
+    color:white;
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:1px;
+    white-space:nowrap;
+}
+
+/* ================= NAV LINKS ================= */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    list-style:none;
+    gap:32px;
+    flex:1;
+}
+
+.nav-links li{
+    display:flex;
+    align-items:center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    position:relative;
+    transition:0.3s;
+    font-weight:500;
+    white-space:nowrap;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#d4af37;
+    transition:0.4s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:#d4af37;
+}
+
+/* ================= NAV ICONS ================= */
+
+.nav-icons{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-shrink:0;
+}
+
+/* ================= SEARCH BOX ================= */
+
+.search-box{
+    display:flex;
+    align-items:center;
+    background:rgba(255,255,255,0.15);
+    padding:8px 15px;
+    border-radius:30px;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+.search-box input{
+    background:transparent;
+    border:none;
+    outline:none;
+    color:white;
+    width:150px;
+    font-size:14px;
+}
+
+.search-box input::placeholder{
+    color:#f5f5f5;
+}
+
+.search-box i{
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.search-box i:hover{
+    color:#d4af37;
+}
+
+/* ================= ICON BOX ================= */
+
+.icon-box{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+.icon-box i{
+    color:white;
+    font-size:20px;
+    transition:0.3s;
+}
+
+.icon-box i:hover{
+    color:#d4af37;
+    transform:translateY(-3px);
+}
+
+/* ================= COUNT BADGE ================= */
+
+.icon-box span{
+    position:absolute;
+    top:-8px;
+    right:-10px;
+    width:20px;
+    height:20px;
+    background:#d4af37;
+    color:black;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:700;
+}
+
+/* ================= MOBILE ================= */
+
+.menu-toggle{
+    display:none;
+    color:white;
+    font-size:34px;
+    cursor:pointer;
+}
+
+@media(max-width:992px){
+
+.navbar{
+    padding:18px 5%;
+}
+
+.logo h2{
+    font-size:18px;
+}
+
+.nav-links{
+    gap:18px;
+}
+
+.search-box{
+    display:none;
+}
+
+}
+
+@media(max-width:768px){
+
+.nav-links{
+    position:absolute;
+    top:100%;
+    left:-100%;
+    width:100%;
+    background:black;
+    flex-direction:column;
+    padding:25px 0;
+    transition:0.5s ease;
+    gap:25px;
+}
+
+.nav-links.active{
+    left:0;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.nav-icons{
+    gap:15px;
+}
+
+.logo img{
+    width:48px;
+    height:48px;
+}
+
+.logo h2{
+    font-size:16px;
+}
+
+.icon-box i{
+    font-size:18px;
+}
+
+.icon-box span{
+    width:18px;
+    height:18px;
+    font-size:10px;
+}
+
+}
+/* ================= MENU TOGGLE ================= */
+
+.menu-toggle{
+    display:none;
+    color:white;
+    font-size:34px;
+    cursor:pointer;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero-section{
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+    position:relative;
+    overflow:hidden;
+}
+
+/* ================= HERO CONTENT ================= */
+
+.hero-content{
+    max-width:700px;
+    color:white;
+    z-index:5;
+}
+
+/* ================= HERO TITLE ================= */
+
+.hero-title{
+    font-size:82px;
+    line-height:95px;
+    font-weight:800;
+    margin-bottom:25px;
+
+    opacity:0;
+    transform:translateX(-100px);
+
+    animation:titleAnimation 1.2s ease forwards;
+
+    text-shadow:0 5px 25px rgba(0,0,0,0.5);
+}
+
+/* ================= HERO TEXT ================= */
+
+.hero-text{
+    font-size:20px;
+    line-height:38px;
+    margin-bottom:35px;
+
+    opacity:0;
+    transform:translateY(50px);
+
+    animation:textAnimation 1.2s ease forwards;
+    animation-delay:0.5s;
+
+    text-shadow:0 3px 15px rgba(0,0,0,0.5);
+}
+
+/* ================= HERO BUTTON ================= */
+
+.hero-btn{
+    padding:18px 42px;
+    border:none;
+    border-radius:10px;
+    background:white;
+    color:black;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+
+    opacity:0;
+    transform:scale(0.7);
+
+    animation:buttonAnimation 1s ease forwards;
+    animation-delay:1s;
+
+    transition:0.4s ease;
+}
+
+/* BUTTON HOVER */
+
+.hero-btn:hover{
+    background:#d4af37;
+    color:black;
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 10px 25px rgba(212,175,55,0.4);
+}
+
+/* ================= KEYFRAMES ================= */
+
+@keyframes titleAnimation{
+
+    from{
+        opacity:0;
+        transform:translateX(120px);
+        letter-spacing:12px;
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+        letter-spacing:0;
+    }
+}
+
+@keyframes textAnimation{
+
+    from{
+        opacity:0;
+        transform:translateY(-100px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(1);
+    }
+}
+
+@keyframes buttonAnimation{
+
+    from{
+        opacity:0;
+        transform:scale(1.6);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(2);
+    }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.hero-section{
+    justify-content:center;
+    text-align:center;
+    padding:0 5%;
+}
+
+.hero-title{
+    font-size:42px;
+    line-height:55px;
+}
+
+.hero-text{
+    font-size:16px;
+    line-height:30px;
+}
+
+.hero-btn{
+    padding:15px 30px;
+}
+
+}
+
+/* ================= TEXT ================= */
+
+.hero-content h1{
+    font-size:82px;
+    line-height:95px;
+    font-weight:800;
+    margin-bottom:25px;
+    color:white;
+    text-shadow:0 5px 20px rgba(0,0,0,0.5);
+
+    /* ANIMATION */
+    opacity:0;
+    transform:translateX(-120px);
+    animation:titleAnimation 1.2s ease forwards;
+}
+
+/* ================= PARAGRAPH ================= */
+
+.hero-content p{
+    font-size:20px;
+    line-height:38px;
+    margin-bottom:35px;
+    color:#f5f5f5;
+    text-shadow:0 3px 15px rgba(0,0,0,0.5);
+
+    /* ANIMATION */
+    opacity:0;
+    transform:translateY(60px);
+    animation:textAnimation 1.2s ease forwards;
+    animation-delay:0.5s;
+}
+
+/* ================= BUTTON ================= */
+
+.hero-content button{
+    padding:18px 42px;
+    border:none;
+    border-radius:8px;
+    background:white;
+    color:black;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s ease;
+
+    /* ANIMATION */
+    opacity:0;
+    transform:scale(0.7);
+    animation:buttonAnimation 1s ease forwards;
+    animation-delay:1s;
+}
+
+/* ================= BUTTON HOVER ================= */
+
+.hero-content button:hover{
+    background:#d4af37;
+    color:black;
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 10px 25px rgba(212,175,55,0.4);
+}
+
+/* ================= KEYFRAMES ================= */
+
+@keyframes titleAnimation{
+
+    from{
+        opacity:0;
+        transform:translateX(-150px);
+        letter-spacing:12px;
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+        letter-spacing:0;
+    }
+}
+
+@keyframes textAnimation{
+
+    from{
+        opacity:0;
+        transform:translateY(70px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes buttonAnimation{
+
+    from{
+        opacity:0;
+        transform:scale(0.6);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ================= ABOUT SECTION ================= */
+
+.about-section{
+    width:100%;
+    padding:120px 8%;
+    background:#fff8f2;
+    overflow:hidden;
+}
+
+/* ================= ABOUT CONTAINER ================= */
+
+.about-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:70px;
+}
+
+/* ================= ABOUT IMAGE ================= */
+
+.about-image{
+    position:relative;
+
+    opacity:0;
+    transform:translateX(-120px);
+
+    animation:aboutImageAnimation 1.5s ease forwards;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+    transition:0.5s;
+}
+
+.about-image:hover img{
+    transform:scale(1.03);
+}
+
+/* ================= ABOUT CONTENT ================= */
+
+.about-content{
+
+    opacity:0;
+    transform:translateX(120px);
+
+    animation:aboutContentAnimation 1.5s ease forwards;
+    animation-delay:0.4s;
+}
+
+.about-content h4{
+    color:#d4af37;
+    font-size:18px;
+    letter-spacing:3px;
+    margin-bottom:18px;
+    font-weight:700;
+}
+
+.about-content h2{
+    font-size:52px;
+    line-height:68px;
+    color:#111;
+    margin-bottom:30px;
+    font-weight:800;
+}
+
+.about-content p{
+    font-size:18px;
+    line-height:34px;
+    color:#555;
+    margin-bottom:22px;
+}
+/* ================= ABOUT IMAGE ANIMATION ================= */
+
+.about-image{
+    opacity:0;
+    transform:translateX(-150px);
+    animation:aboutImageLeft 1.8s ease forwards;
+}
+
+@keyframes aboutImageLeft{
+
+    from{
+        opacity:0;
+        transform:translateX(-150px) scale(0.9);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0) scale(1);
+    }
+}
+
+/* ================= ABOUT CONTENT ANIMATION ================= */
+
+.about-content{
+    opacity:0;
+    transform:translateX(150px);
+    animation:aboutContentRight 1.8s ease forwards;
+    animation-delay:0.5s;
+}
+
+@keyframes aboutContentRight{
+
+    from{
+        opacity:0;
+        transform:translateX(150px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* ================= FEATURES ================= */
+
+.about-features{
+    margin-top:35px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.feature-box{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:white;
+    padding:18px 22px;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+    transition:0.4s;
+}
+
+.feature-box:hover{
+    transform:translateX(10px);
+    background:#d4af37;
+    color:black;
+}
+
+.feature-box i{
+    font-size:22px;
+}
+
+.feature-box span{
+    font-size:17px;
+    font-weight:600;
+}
+
+/* ================= BUTTON ================= */
+
+.about-btn{
+    margin-top:40px;
+    padding:18px 40px;
+    border:none;
+    border-radius:10px;
+    background:black;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.4s ease;
+}
+
+.about-btn:hover{
+    background:#d4af37;
+    color:black;
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(212,175,55,0.4);
+}
+
+/* ================= KEYFRAMES ================= */
+
+@keyframes aboutImageAnimation{
+
+    from{
+        opacity:0;
+        transform:translateX(-120px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes aboutContentAnimation{
+
+    from{
+        opacity:0;
+        transform:translateX(120px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+.about-container{
+    grid-template-columns:1fr;
+}
+
+.about-content{
+    text-align:center;
+}
+
+.about-features{
+    align-items:center;
+}
+
+.about-content h2{
+    font-size:40px;
+    line-height:55px;
+}
+
+}
+
+@media(max-width:768px){
+
+.about-section{
+    padding:80px 5%;
+}
+
+.about-content h2{
+    font-size:32px;
+    line-height:45px;
+}
+
+.about-content p{
+    font-size:16px;
+    line-height:30px;
+}
+
+.feature-box{
+    width:100%;
+}
+
+.about-btn{
+    width:100%;
+}
+
+}
+/* ================= PRODUCTS ================= */
+
+.products-section{
+    padding:100px 8%;
+    background:white;
+}
+
+.party-section{
+    background:#fff8f2;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:60px;
+    font-weight:700;
+    color:#111;
+}
+
+.products-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.product-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.5s ease;
+    position:relative;
+
+    /* ANIMATION */
+    opacity:0;
+    transform:translateX(300px);
+
+    animation:slideRightToLeft 3s ease forwards;
+}
+
+/* ================= STAGGER EFFECT ================= */
+
+.product-card:nth-child(1){
+    animation-delay:0.2s;
+}
+
+.product-card:nth-child(2){
+    animation-delay:0.4s;
+}
+
+.product-card:nth-child(3){
+    animation-delay:0.6s;
+}
+
+.product-card:nth-child(4){
+    animation-delay:0.8s;
+}
+
+.product-card:nth-child(5){
+    animation-delay:1s;
+}
+
+.product-card:nth-child(6){
+    animation-delay:1.2s;
+}
+
+.product-card:nth-child(7){
+    animation-delay:1.4s;
+}
+
+.product-card:nth-child(8){
+    animation-delay:1.6s;
+}
+
+/* ================= HOVER EFFECT ================= */
+
+.product-card:hover{
+    transform:translateY(-12px) scale(1.02);
+    box-shadow:0 20px 45px rgba(0,0,0,0.18);
+}
+
+/* ================= KEYFRAME ================= */
+
+@keyframes slideRightToLeft{
+
+    from{
+        opacity:0;
+        transform:translateX(350px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.product-image{
+    width:100%;
+    height:350px;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.08);
+}
+
+.product-content{
+    padding:20px;
+}
+
+.product-content h3{
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.product-content p{
+    color:#d4af37;
+    font-weight:700;
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.product-content button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.product-content button:hover{
+    background:#d4af37;
+    color:black;
+}
+
+/* ================= LUXURY PRODUCT ANIMATION ================= */
+
+@keyframes luxurySlide{
+
+    0%{
+        opacity:0;
+        transform:translateX(300px) scale(0.8);
+        filter:blur(10px);
+    }
+
+    60%{
+        opacity:1;
+        transform:translateX(-20px) scale(1.02);
+        filter:blur(0);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateX(0) scale(1);
+        filter:blur(0);
+    }
+}
+/* ================= FOOTER ================= */
+
+.footer-section{
+    background:#c89f95;
+    padding:80px 8% 40px;
+    color:black;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.5fr;
+    gap:60px;
+}
+
+.footer-box h2{
+    font-size:32px;
+    margin-bottom:35px;
+}
+
+.footer-box p{
+    font-size:18px;
+    line-height:34px;
+    margin-bottom:18px;
+}
+
+.footer-box ul{
+    list-style:none;
+}
+
+.footer-box ul li{
+    margin-bottom:18px;
+}
+
+.footer-box ul li a{
+    text-decoration:none;
+    color:black;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.footer-box ul li a:hover{
+    color:white;
+    padding-left:5px;
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter{
+    display:flex;
+    margin-top:25px;
+}
+
+.newsletter input{
+    width:100%;
+    padding:18px;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+
+.newsletter button{
+    padding:18px 30px;
+    border:none;
+    background:black;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.newsletter button:hover{
+    background:#d4af37;
+    color:black;
+}
+
+/* ================= FOOTER HR ================= */
+
+.footer-section hr{
+    margin:60px 0 40px;
+    border:0.5px solid rgba(255,255,255,0.5);
+}
+
+/* ================= SOCIAL ================= */
+
+.footer-social{
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    font-size:24px;
+    margin-bottom:35px;
+}
+
+.footer-social i{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.footer-social i:hover{
+    color:white;
+    transform:translateY(-4px);
+}
+
+/* ================= SOCIAL LINKS ================= */
+
+.footer-social a{
+    color:black;
+    font-size:24px;
+    transition:0.3s ease;
+}
+
+.footer-social a:hover{
+    color:white;
+    transform:translateY(-5px) scale(1.1);
+}
+
+/* ================= COPYRIGHT ================= */
+
+.footer-bottom{
+    text-align:center;
+}
+
+.footer-bottom p{
+    font-size:18px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+.footer-container{
+    grid-template-columns:1fr 1fr;
+}
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.nav-links{
+    position:absolute;
+    top:100%;
+    left:-100%;
+    width:100%;
+    background:black;
+    flex-direction:column;
+    text-align:center;
+    padding:20px 0;
+    transition:0.4s;
+}
+
+.nav-links.active{
+    left:0;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.logo h2{
+    font-size:18px;
+}
+
+.hero-section{
+    justify-content:center;
+    text-align:center;
+    padding:0 5%;
+}
+
+.hero-content{
+    margin-top:100px;
+}
+
+.hero-content h1{
+    font-size:42px;
+    line-height:55px;
+}
+
+.hero-content p{
+    font-size:16px;
+    line-height:30px;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+.products-section{
+    padding:70px 5%;
+}
+
+.product-image{
+    height:280px;
+}
+
+.footer-container{
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.newsletter{
+    flex-direction:column;
+}
+
+.newsletter button{
+    width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<!-- HERO WRAPPER -->
+
+<div class="hero-wrapper">
+
+<!-- VIDEO BACKGROUND -->
+
+<div class="video-background">
+
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="videoplayback (1).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</div>
+
+<!-- OVERLAY -->
+
+<div class="overlay"></div>
+
+<!-- HEADER -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<img src="saree_collections/ChatGPT Image May 25, 2026, 09_28_42 AM.png">
+
+<h2>MOULIKA AURA SILKS</h2>
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about us">About us</a></li>
+
+<li><a href="#collections">Collections</a></li>
+
+<li><a href="#bridal">Bridal</a></li>
+
+<li><a href="#partywear">Party Wear</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<div class="nav-icons">
+
+<!-- SEARCH -->
+<div class="search-box">
+
+<input type="text" id="searchInput" placeholder="Search sarees...">
+
+<i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+
+</div>
+
+<!-- WISHLIST -->
+<div class="icon-box">
+
+<i class="fa-regular fa-heart"></i>
+
+<span id="wishlistCount">0</span>
+
+</div>
+
+<!-- CART -->
+<div class="icon-box">
+
+<i class="fa-solid fa-bag-shopping" id="cartIcon"></i>
+
+<span id="cartCount">0</span>
+
+</div>
+
+<!-- ACCOUNT -->
+<div class="icon-box">
+
+<i class="fa-regular fa-user"></i>
+
+</div>
+
+</div>
+
+<div class="menu-toggle" id="menuToggle">☰</div>
+
+</nav>
+
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero-section" id="home">
+
+<div class="hero-content">
+
+<h1>
+Celebrating the Grace of Indian Tradition
+</h1>
+
+<p>
+From timeless Kanchipuram silks to royal bridal collections,
+ discover sarees that reflect the beauty, 
+ culture, and elegance of every Indian woman.
+</p>
+
+<button onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">
+
+Explore Collection
+
+</button>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- ================= ABOUT SECTION ================= -->
+
+<section class="about-section" id="About us">
+
+<div class="about-container">
+
+<!-- LEFT IMAGE -->
+
+<div class="about-image">
+
+<img src="saree_collections/bridal6.jpg" alt="About Moulika Aura Silks">
+
+</div>
+
+<!-- RIGHT CONTENT -->
+
+<div class="about-content">
+
+<h4>ABOUT US</h4>
+
+<h2>
+Crafting Elegance Through Timeless Silk Traditions
+</h2>
+
+<p>
+At Moulika Aura Silks, we celebrate the beauty of Indian heritage through luxurious silk sarees designed for every occasion. From bridal masterpieces to elegant party wear collections, every saree reflects tradition, grace, and royal craftsmanship.
+</p>
+
+<p>
+Our mission is to bring timeless fashion and premium quality together while preserving the richness of Indian culture. Every thread we weave carries elegance, confidence, and beauty for modern women.
+</p>
+
+<div class="about-features">
+
+<div class="feature-box">
+<i class="fa-solid fa-gem"></i>
+<span>Premium Quality Silk</span>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-heart"></i>
+<span>Elegant Bridal Collections</span>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-star"></i>
+<span>Luxury Designer Wear</span>
+</div>
+
+</div>
+
+<button class="about-btn">
+Explore More
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRODUCTS SECTION -->
+
+<section class="products-section" id="collections">
+
+<h2 class="section-title">Trending Silk Sarees</h2>
+
+<div class="products-container">
+
+<!-- PRODUCT 1 -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="saree_collections/silk2.jpg">
+
+</div>
+
+<div class="product-content">
+
+<h3>Kanchipuram Bridal Silk</h3>
+
+<p>₹4,999</p>
+
+<button>Add To Cart</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 2 -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="saree_collections/silk1.jpg">
+
+</div>
+
+<div class="product-content">
+
+<h3>Elegant Soft Silk</h3>
+
+<p>₹3,499</p>
+
+<button>Add To Cart</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 3 -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="saree_collections/pattu4.jpg">
+
+</div>
+
+<div class="product-content">
+
+<h3>Traditional Pattu Saree</h3>
+
+<p>₹6,999</p>
+
+<button>Add To Cart</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 4 -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="saree_collections/pattu2.jpeg">
+
+</div>
+
+<div class="product-content">
+
+<h3>Designer Party Silk</h3>
+
+<p>₹5,999</p>
+
+<button>Add To Cart</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- BRIDAL -->
+<section class="products-section" id="bridal">
+
+<h2 class="section-title">Bridal Collection</h2>
+
+<div class="products-container">
+
+<!-- 1 -->
+<div class="product-card">
+<div class="product-image">
+<img src="saree_collections/bridal.jpg">
+</div>
+
+<div class="product-content">
+<h3>Royal blue Silk saree</h3>
+<p>₹14,999</p>
+<button>Add To Cart</button>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="product-card">
+<div class="product-image">
+<img src="saree_collections/bridal1.jpg">
+</div>
+
+<div class="product-content">
+<h3>light blue weeding collections</h3>
+<p>₹14,499</p>
+<button>Add To Cart</button>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="product-card">
+<div class="product-image">
+<img src="saree_collections/bridal2.jpg">
+</div>
+
+<div class="product-content">
+<h3>Kanchipuram Silk Gold Saree</h3>
+<p>₹14,999</p>
+<button>Add To Cart</button>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="product-card">
+<div class="product-image">
+<img src="saree_collections/bridal3.jpg">
+</div>
+
+<div class="product-content">
+<h3>Traditional South Silk</h3>
+<p>₹11,499</p>
+<button>Add To Cart</button>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="product-card">
+<div class="product-image">
+<img src="saree_collections/bridal4.jpg">
+</div>
+
+<div class="product-content">
+<h3>Luxury Bridal Collection</h3>
+<p>₹12,999</p>
+<button>Add To Cart</button>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="product-card">
+<div class="product-image">
+<img src="saree_collections/pattu2.jpeg">
+</div>
+
+<div class="product-content">
+<h3>Designer Bridal Saree</h3>
+<p>₹13,499</p>
+<button>Add To Cart</button>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="product-card">
+<div class="product-image">
+<img src="saree_collections/bridal6.jpg">
+</div>
+
+<div class="product-content">
+<h3>Bridal kanjeevaram saree in peach</h3>
+<p>₹13,499</p>
+<button>Add To Cart</button>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="product-card">
+<div class="product-image">
+<img src="saree_collections/bridal5.jpg">
+</div>
+
+<div class="product-content">
+<h3>gold bridal silk saree</h3>
+<p>₹13,499</p>
+<button>Add To Cart</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PARTY WEAR -->
+<section class="products-section party-section" id="partywear">
+
+<h2 class="section-title">Party Wear Collection</h2>
+
+<div class="products-container">
+
+<!-- 1 -->
+<div class="product-card">
+
+<div class="product-image">
+<img src="saree_collections/party1.jpg">
+</div>
+
+<div class="product-content">
+<h3>Elegant Party Silk</h3>
+<p>₹5,999</p>
+<button>Add To Cart</button>
+</div>
+
+</div>
+
+<!-- 2 -->
+<div class="product-card">
+
+<div class="product-image">
+<img src="saree_collections/party2.jpg">
+</div>
+
+<div class="product-content">
+<h3>Luxury Evening Saree</h3>
+<p>₹6,499</p>
+<button>Add To Cart</button>
+</div>
+
+</div>
+
+<!-- 3 -->
+<div class="product-card">
+
+<div class="product-image">
+<img src="saree_collections/party3.jpg">
+</div>
+
+<div class="product-content">
+<h3>Soft Silk Party Wear</h3>
+<p>₹7,999</p>
+<button>Add To Cart</button>
+</div>
+
+</div>
+
+<!-- 4 -->
+<div class="product-card">
+
+<div class="product-image">
+<img src="saree_collections/party4.jpg">
+</div>
+
+<div class="product-content">
+<h3>premium fashion saree</h3>
+<p>₹5,499</p>
+<button>Add To Cart</button>
+</div>
+
+</div>
+
+<!-- 5 -->
+<div class="product-card">
+
+<div class="product-image">
+<img src="saree_collections/party5.jpg">
+</div>
+
+<div class="product-content">
+<h3>Golden Designer Saree</h3>
+<p>₹8,499</p>
+<button>Add To Cart</button>
+</div>
+
+</div>
+
+<!-- 6 -->
+<div class="product-card">
+
+<div class="product-image">
+<img src="saree_collections/party.jpg">
+</div>
+
+<div class="product-content">
+<h3>Royal Party Collection</h3>
+<p>₹9,499</p>
+<button>Add To Cart</button>
+</div>
+
+</div>
+
+<!-- 6 -->
+<div class="product-card">
+
+<div class="product-image">
+<img src="saree_collections/party6.jpg">
+</div>
+
+<div class="product-content">
+<h3>dark blue slik saree</h3>
+<p>₹9,499</p>
+<button>Add To Cart</button>
+</div>
+
+</div>
+
+<!-- 6 -->
+<div class="product-card">
+
+<div class="product-image">
+<img src="saree_collections/party8.jpg">
+</div>
+
+<div class="product-content">
+<h3>lavender space sliks </h3>
+<p>₹9,499</p>
+<button>Add To Cart</button>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer-section" id="contact">
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h2>CONNECT</h2>
+
+<p>
+
+<strong>Moulika Aura Silks Pvt Ltd</strong><br><br>
+
+Balaji Complex, Silk Market Road,<br>
+
+Kanchipuram Heritage Street,<br>
+
+Hyderabad, Telangana - 500001
+
+</p>
+
+<p><strong>Online Order Queries:</strong> 9573735937</p>
+
+<p><strong>Store Phone Number:</strong> 9885051123</p>
+
+<p><strong>Timings:</strong> 10am to 8pm</p>
+
+</div>
+
+<div class="footer-box">
+
+<h2>ABOUT US</h2>
+
+<ul>
+
+<li><a href="#">About Us</a></li>
+
+<li><a href="#">Contact</a></li>
+
+<li><a href="#">Our Stores</a></li>
+
+<li><a href="#">Premium Bridal Collections</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-box">
+
+<h2>HELP</h2>
+
+<ul>
+
+<li><a href="#">Privacy Policy</a></li>
+
+<li><a href="#">Shipping</a></li>
+
+<li><a href="#">Returns</a></li>
+
+<li><a href="#">FAQ</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-box">
+
+<h2>JOIN OUR NEWSLETTER</h2>
+
+<div class="newsletter">
+
+<input type="email" placeholder="Join our mailing list">
+
+<button>Join</button>
+
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="footer-social">
+
+<!-- FACEBOOK -->
+<a href="https://www.facebook.com" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+</a>
+
+<!-- TWITTER -->
+<a href="https://twitter.com" target="_blank">
+    <i class="fa-brands fa-twitter"></i>
+</a>
+
+<!-- YOUTUBE -->
+<a href="https://www.youtube.com" target="_blank">
+    <i class="fa-brands fa-youtube"></i>
+</a>
+
+<!-- LINKEDIN -->
+<a href="https://www.linkedin.com" target="_blank">
+    <i class="fa-brands fa-linkedin-in"></i>
+</a>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Moulika Aura Silks • All Rights Reserved
+</p>
+
+</div>
+
+</footer>
+
+</body>
+
+</html>
